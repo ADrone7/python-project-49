@@ -3,6 +3,7 @@ from math import log
 from random import uniform
 
 SMALL_PRIMES = set([2, 3])
+FIRST_POSSIBLE_DIVISOR = 5
 LEFT_RANGE = 1e-6
 RIGHT_RANGE = 1
 MAX_VALUE = 1000
@@ -10,14 +11,15 @@ LOG_BASE = 10
 
 
 def is_prime(num: int) -> bool:
-    if num < 2:
+    if num == 1:
         return False
     
     for prime in SMALL_PRIMES:
         if num % prime == 0 and num != prime:
             return False
     
-    for possible_divisor in accumulate(cycle([2, 4]), initial=5):
+    divisors = accumulate(cycle([2, 4]), initial=FIRST_POSSIBLE_DIVISOR)
+    for possible_divisor in divisors:
         if possible_divisor > int(num**(0.5) + 1):
             break
         if num % possible_divisor == 0:
