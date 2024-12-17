@@ -2,7 +2,7 @@
 authors = [
     {name = "ADrone7"},
 ]
-name = "brain-games"
+name = "hexlet-code"
 version = "0.7.1"
 description = "Play 5 simple number games"
 readme = "README.md"
