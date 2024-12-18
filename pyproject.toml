@@ -3,7 +3,7 @@ authors = [
     {name = "ADrone7"},
 ]
 name = "hexlet-code"
-version = "0.7.1"
+version = "0.7.2"
 description = "Play 5 simple number games"
 readme = "README.md"
 requires-python = ">=3.12"

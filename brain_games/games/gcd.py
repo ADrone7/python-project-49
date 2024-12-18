@@ -5,7 +5,7 @@ MIN_VALUE = 1
 MAX_VALUE = 100
 
 
-def gcd_game() -> tuple[str, str]:
+def get_question_and_answer_gcd() -> tuple[str, str]:
     number_1 = randint(MIN_VALUE, MAX_VALUE)
     number_2 = randint(MIN_VALUE, MAX_VALUE)
     question = f"{number_1} {number_2}"

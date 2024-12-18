@@ -8,7 +8,7 @@ MIN_START = 0
 MAX_START = 20
 
 
-def progression_game() -> tuple[str, str]:
+def get_question_and_answer_progression() -> tuple[str, str]:
     progression_length = randint(MIN_LEN, MAX_LEN)
     progression_step = randint(MIN_STEP, MAX_STEP)
     progression_start = randint(MIN_START, MAX_START)

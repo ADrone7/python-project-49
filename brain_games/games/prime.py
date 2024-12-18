@@ -2,7 +2,7 @@ from itertools import accumulate, cycle
 from math import log
 from random import uniform
 
-SMALL_PRIMES = set([2, 3])
+SMALL_PRIMES = (2, 3)
 FIRST_POSSIBLE_DIVISOR = 5
 LEFT_RANGE = 1e-6
 RIGHT_RANGE = 1
@@ -19,8 +19,9 @@ def is_prime(num: int) -> bool:
             return False
     
     divisors = accumulate(cycle([2, 4]), initial=FIRST_POSSIBLE_DIVISOR)
+    max_divisor_to_check = int(num**(0.5)) + 1
     for possible_divisor in divisors:
-        if possible_divisor > int(num**(0.5) + 1):
+        if possible_divisor > max_divisor_to_check:
             break
         if num % possible_divisor == 0:
             return False
@@ -28,7 +29,7 @@ def is_prime(num: int) -> bool:
     return True
 
 
-def prime_game() -> tuple[str, str]:
+def get_question_and_answer_prime() -> tuple[str, str]:
     number = int(MAX_VALUE / log(LEFT_RANGE, LOG_BASE) *
                  log(uniform(LEFT_RANGE, RIGHT_RANGE), LOG_BASE))
     question = str(number)
